@@ -11,41 +11,6 @@ on:
 
 ### Refer to https://game.ci/docs/github/getting-started
 jobs:
-  checklicense:
-    if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
-    name: Check for UNITY_LICENSE in GitHub Secrets
-    runs-on: ubuntu-latest
-    outputs:
-      is_unity_license_set: ${{ steps.checklicense_job.outputs.is_unity_license_set }}
-    steps:
-      - name: Check whether unity activation requests should be done
-        id: checklicense_job
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-        run: |
-            echo "Skip activation job: ${{ env.UNITY_LICENSE != '' }}"
-            export is_unity_license_set="${{ env.UNITY_LICENSE != '' }}"
-            echo "is_unity_license_set=$is_unity_license_set" >> $GITHUB_OUTPUT
-
-  activation:
-    needs: checklicense
-    if: ${{ needs.checklicense.outputs.is_unity_license_set == 'false' && !contains(github.event.head_commit.message, '[skip-ci]') }}
-    name: Request manual activation file 🔑
-    runs-on: ubuntu-latest
-    steps:
-      # Request manual activation file
-      - name: Request manual activation file
-        id: getManualLicenseFile
-        uses: game-ci/unity-request-activation-file@v2
-      # Upload artifact (Unity_v20XX.X.XXXX.alf)
-      - name: Expose as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: ${{ steps.getManualLicenseFile.outputs.filePath }}
-          path: ${{ steps.getManualLicenseFile.outputs.filePath }}
-
   build:
     if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
     name: Build for ${{ matrix.targetPlatform }}
@@ -56,14 +21,14 @@ jobs:
         targetPlatform:
           - StandaloneLinux64
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           lfs: true
       - uses: actions/cache@v3
         with:
           path: Library
           key: Library-${{ matrix.targetPlatform }}
-      - uses: game-ci/unity-builder@v2
+      - uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
@@ -86,14 +51,14 @@ jobs:
         targetPlatform:
           - StandaloneOSX
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           lfs: true
       - uses: actions/cache@v3
         with:
           path: Library
           key: Library-${{ matrix.targetPlatform }}
-      - uses: game-ci/unity-builder@v2
+      - uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
@@ -118,14 +83,14 @@ jobs:
           - StandaloneWindows64
           - WSAPlayer
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           lfs: true
       - uses: actions/cache@v3
         with:
           path: Library
           key: Library-${{ matrix.targetPlatform }}
-      - uses: game-ci/unity-builder@v2
+      - uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
