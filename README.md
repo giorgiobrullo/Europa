@@ -65,13 +65,13 @@ Il giocatore controlla un pinguino eroico dotato di abilità speciali come il do
 | User interface (6*0.5)| ✅ 3    |                                   |
 | Particelle (3*0.5)                             | ✅ 1.5      |     |
 
-t
+## Integrazione con LiveSplit
 
 **Europa** è ottimizzato per gli appassionati di speedrun e offre un'integrazione semplice con LiveSplit, un popolare timer di speedrun. LiveSplit è un'applicazione di temporizzazione altamente personalizzabile, utilizzata dai giocatori per cronometrarsi durante le speedrun.
 
 Per utilizzare LiveSplit con **Europa**, segui questi passaggi:
 
-1. **Scarica LiveSplit** dal [sito ufficiale](https://livesplit.org/).
+1. **Scarica LiveSplit** dal [sito ufficiale](https://livesplit.org/) o da altre fonti come l'App store o package manager.
 2. **Configura il Server TCP**:
     - Apri LiveSplit.
     - Fai clic con il tasto destro sulla finestra di LiveSplit e seleziona `Control` -> `Start TCP Server`.
