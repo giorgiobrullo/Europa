@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Run version="1.7.0">
+  <GameIcon />
+  <GameName>Europa</GameName>
+  <CategoryName>Any% - Normal</CategoryName>
+  <LayoutPath>?default</LayoutPath>
+  <Metadata>
+    <Run id="" />
+    <Platform usesEmulator="False">
+    </Platform>
+    <Region>
+    </Region>
+    <Variables />
+  </Metadata>
+  <Offset>00:00:00</Offset>
+  <AttemptCount>0</AttemptCount>
+  <AttemptHistory>
+    <Attempt id="1" started="07/05/2024 20:56:39" isStartedSynced="True" ended="07/05/2024 20:57:31" isEndedSynced="True" />
+    <Attempt id="2" started="07/05/2024 21:09:08" isStartedSynced="True" ended="07/05/2024 21:09:11" isEndedSynced="True">
+      <RealTime>00:00:02.5893045</RealTime>
+    </Attempt>
+    <Attempt id="3" started="07/05/2024 21:14:49" isStartedSynced="True" ended="07/05/2024 21:17:37" isEndedSynced="True" />
+    <Attempt id="4" started="07/05/2024 21:26:30" isStartedSynced="True" ended="07/05/2024 21:26:59" isEndedSynced="True" />
+    <Attempt id="5" started="07/05/2024 21:27:23" isStartedSynced="False" ended="07/05/2024 21:29:21" isEndedSynced="True">
+      <PauseTime>00:00:03.8062266</PauseTime>
+    </Attempt>
+    <Attempt id="6" started="07/05/2024 21:35:14" isStartedSynced="True" ended="07/05/2024 21:36:10" isEndedSynced="True">
+      <PauseTime>00:00:03.4534353</PauseTime>
+    </Attempt>
+    <Attempt id="7" started="07/05/2024 21:36:15" isStartedSynced="True" ended="07/05/2024 21:37:05" isEndedSynced="True">
+      <PauseTime>00:00:01.6700467</PauseTime>
+    </Attempt>
+    <Attempt id="8" started="07/05/2024 21:37:12" isStartedSynced="True" ended="07/05/2024 21:38:36" isEndedSynced="True">
+      <PauseTime>00:00:01.9279251</PauseTime>
+    </Attempt>
+    <Attempt id="9" started="07/05/2024 21:48:09" isStartedSynced="True" ended="07/05/2024 21:53:40" isEndedSynced="True">
+      <RealTime>00:05:26.9785188</RealTime>
+      <PauseTime>00:00:03.8590668</PauseTime>
+    </Attempt>
+    <Attempt id="10" started="07/05/2024 21:55:48" isStartedSynced="True" ended="07/05/2024 21:56:57" isEndedSynced="True">
+      <PauseTime>00:00:07.8514986</PauseTime>
+    </Attempt>
+    <Attempt id="11" started="07/05/2024 22:00:25" isStartedSynced="True" ended="07/05/2024 22:00:37" isEndedSynced="True" />
+    <Attempt id="12" started="07/05/2024 22:02:12" isStartedSynced="True" ended="07/05/2024 22:04:42" isEndedSynced="True">
+      <PauseTime>00:02:14.0973207</PauseTime>
+    </Attempt>
+    <Attempt id="13" started="07/05/2024 22:05:00" isStartedSynced="True" ended="07/05/2024 22:06:02" isEndedSynced="True">
+      <PauseTime>00:00:03.3526952</PauseTime>
+    </Attempt>
+    <Attempt id="14" started="07/05/2024 22:06:05" isStartedSynced="True" ended="07/05/2024 22:06:12" isEndedSynced="True" />
+    <Attempt id="15" started="07/05/2024 22:06:15" isStartedSynced="True" ended="07/05/2024 22:07:19" isEndedSynced="True">
+      <PauseTime>00:00:03.3423225</PauseTime>
+    </Attempt>
+    <Attempt id="16" started="07/05/2024 22:15:19" isStartedSynced="True" ended="07/05/2024 22:15:43" isEndedSynced="True" />
+    <Attempt id="17" started="07/05/2024 22:24:41" isStartedSynced="True" ended="07/05/2024 22:25:50" isEndedSynced="True">
+      <PauseTime>00:00:03.3508275</PauseTime>
+    </Attempt>
+    <Attempt id="18" started="07/05/2024 22:28:19" isStartedSynced="True" ended="07/05/2024 22:29:24" isEndedSynced="True">
+      <PauseTime>00:00:03.3547200</PauseTime>
+    </Attempt>
+    <Attempt id="19" started="07/05/2024 22:30:26" isStartedSynced="True" ended="07/05/2024 22:37:45" isEndedSynced="True">
+      <PauseTime>00:04:02.9195450</PauseTime>
+    </Attempt>
+    <Attempt id="20" started="07/05/2024 22:37:55" isStartedSynced="True" ended="07/05/2024 22:38:54" isEndedSynced="True">
+      <PauseTime>00:00:03.3507482</PauseTime>
+    </Attempt>
+    <Attempt id="21" started="07/05/2024 22:38:56" isStartedSynced="True" ended="07/05/2024 22:42:53" isEndedSynced="True">
+      <RealTime>00:03:50.6278289</RealTime>
+      <PauseTime>00:00:06.3562143</PauseTime>
+    </Attempt>
+    <Attempt id="22" started="07/05/2024 22:43:17" isStartedSynced="True" ended="07/05/2024 22:43:55" isEndedSynced="True">
+      <PauseTime>00:00:01.6415320</PauseTime>
+    </Attempt>
+    <Attempt id="23" started="07/05/2024 22:43:56" isStartedSynced="True" ended="07/05/2024 22:46:03" isEndedSynced="True">
+      <PauseTime>00:00:05.0235246</PauseTime>
+    </Attempt>
+    <Attempt id="24" started="07/05/2024 22:47:59" isStartedSynced="True" ended="07/05/2024 22:50:21" isEndedSynced="True">
+      <RealTime>00:02:14.9003799</RealTime>
+      <PauseTime>00:00:06.3736138</PauseTime>
+    </Attempt>
+    <Attempt id="25" started="07/05/2024 23:16:22" isStartedSynced="True" ended="07/05/2024 23:17:29" isEndedSynced="True">
+      <PauseTime>00:00:03.3472555</PauseTime>
+    </Attempt>
+    <Attempt id="26" started="07/06/2024 11:31:47" isStartedSynced="True" ended="07/06/2024 11:34:04" isEndedSynced="True">
+      <RealTime>00:02:10.5695552</RealTime>
+      <PauseTime>00:00:06.4015703</PauseTime>
+    </Attempt>
+    <Attempt id="27" started="07/06/2024 11:46:07" isStartedSynced="True" ended="07/06/2024 11:46:15" isEndedSynced="True" />
+    <Attempt id="28" started="07/06/2024 11:46:17" isStartedSynced="True" ended="07/06/2024 11:46:30" isEndedSynced="True" />
+    <Attempt id="29" started="07/06/2024 11:46:31" isStartedSynced="True" ended="07/06/2024 11:48:59" isEndedSynced="True">
+      <RealTime>00:02:21.2668636</RealTime>
+      <PauseTime>00:00:06.4063424</PauseTime>
+    </Attempt>
+    <Attempt id="30" started="07/06/2024 11:49:46" isStartedSynced="True" ended="07/06/2024 11:52:02" isEndedSynced="True">
+      <RealTime>00:02:10.5472585</RealTime>
+      <PauseTime>00:00:06.3508226</PauseTime>
+    </Attempt>
+  </AttemptHistory>
+  <Segments>
+    <Segment>
+      <Name>Tutorial</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>Cave</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>Platform</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>Platform - Check. Trampoline</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>Platform - Check. Platforms</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>Race to the top</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+  </Segments>
+  <AutoSplitterSettings />
+</Run>
