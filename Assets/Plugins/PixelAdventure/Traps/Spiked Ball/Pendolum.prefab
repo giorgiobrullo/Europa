@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4110614266155896824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8985199830696273335}
+  - component: {fileID: 1679388283294392416}
+  m_Layer: 0
+  m_Name: Pendolum
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8985199830696273335
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4110614266155896824}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 27.57, y: 22.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679388283294392416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4110614266155896824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dfd5718ca8d49c7b1d505be00856003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spikedBallPrefab: {fileID: 1784245575803713803, guid: 1a21212b1a17b3945b7112f0145e6d1b, type: 3}
+  chainPrefab: {fileID: 1654491391285968902, guid: 416729fefafbf974db66705214eea1e7, type: 3}
+  length: 5.23
+  speed: 2
+  chainInterval: 0.5
+  maxAngle: 62.7
+  soundAtBottomPrefab: {fileID: 2075428993079739329, guid: 0f5e8325fc6f8144a9c6762805cd55eb, type: 3}

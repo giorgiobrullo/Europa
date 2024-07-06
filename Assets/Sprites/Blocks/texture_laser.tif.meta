@@ -1,0 +1,426 @@
+fileFormatVersion: 2
+guid: 4b165e02efc455349bfd78d10e15950c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: texture_laser_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1370
+        width: 512
+        height: 678
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 35, y: 339}
+        - {x: -40, y: 339}
+        - {x: -40, y: -339}
+        - {x: 34, y: -339}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e8fe60092d8ed4482d4801b1dc344f
+      internalID: 649764235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_laser_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1370
+        width: 512
+        height: 678
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 35, y: 339}
+        - {x: -40, y: 339}
+        - {x: -40, y: -339}
+        - {x: 34, y: -339}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0380794e57daf7042afa1ee7e0cfe398
+      internalID: 1094760073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_laser_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1370
+        width: 512
+        height: 678
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 35, y: 339}
+        - {x: -40, y: 339}
+        - {x: -40, y: -339}
+        - {x: 34, y: -339}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b52d1f5186f0854896e2ba381fef12c
+      internalID: 1235924147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_laser_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1370
+        width: 512
+        height: 678
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 35, y: 339}
+        - {x: -40, y: 339}
+        - {x: -40, y: -339}
+        - {x: 34, y: -339}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf347dfa5ba2784aa047c291654619c
+      internalID: -529164033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_laser_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 692
+        width: 512
+        height: 678
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 35, y: 339}
+        - {x: -40, y: 339}
+        - {x: -40, y: -339}
+        - {x: 34, y: -339}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 872aec3e144cb4f4c8ee79ec0d4c761d
+      internalID: 1948851365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_laser_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 692
+        width: 512
+        height: 678
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 35, y: 339}
+        - {x: -40, y: 339}
+        - {x: -40, y: -339}
+        - {x: 34, y: -339}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b6c2971c3c6924f881c3fc49ca8425
+      internalID: -2137145032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_laser_6
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 692
+        width: 512
+        height: 678
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 35, y: 339}
+        - {x: -40, y: 339}
+        - {x: -40, y: -339}
+        - {x: 34, y: -339}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0cc95ca1cf45c04cbfd2241f14eb0e9
+      internalID: 1097388283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_laser_7
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 692
+        width: 512
+        height: 678
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 35, y: 339}
+        - {x: -40, y: 339}
+        - {x: -40, y: -339}
+        - {x: 34, y: -339}
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca0e5814908ccc4692b68825d030432
+      internalID: 956151894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_laser_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 14
+        width: 512
+        height: 678
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 35, y: 339}
+        - {x: -40, y: 339}
+        - {x: -40, y: -339}
+        - {x: 34, y: -339}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47494d27f23187c4ba868e7bc918e3f7
+      internalID: -1953281912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_laser_9
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 14
+        width: 512
+        height: 678
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 35, y: 339}
+        - {x: -40, y: 339}
+        - {x: -40, y: -339}
+        - {x: 34, y: -339}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cea0b8259da2e64ca54a98014ad0262
+      internalID: 1119838921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_laser_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 14
+        width: 512
+        height: 678
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 35, y: 339}
+        - {x: -40, y: 339}
+        - {x: -40, y: -339}
+        - {x: 34, y: -339}
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd5aa1c6187bdb24a9409b7dce9ebb9b
+      internalID: -28434048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_laser_11
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 14
+        width: 512
+        height: 678
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 35, y: 339}
+        - {x: -40, y: 339}
+        - {x: -40, y: -339}
+        - {x: 34, y: -339}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe31a97a9490184c8e12a71c6e1bb80
+      internalID: -1435806625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      texture_laser_0: 649764235
+      texture_laser_1: 1094760073
+      texture_laser_10: -28434048
+      texture_laser_11: -1435806625
+      texture_laser_2: 1235924147
+      texture_laser_3: -529164033
+      texture_laser_4: 1948851365
+      texture_laser_5: -2137145032
+      texture_laser_6: 1097388283
+      texture_laser_7: 956151894
+      texture_laser_8: -1953281912
+      texture_laser_9: 1119838921
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
