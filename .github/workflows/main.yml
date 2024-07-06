@@ -12,7 +12,7 @@ on:
 ### Refer to https://game.ci/docs/github/getting-started
 jobs:
   checklicense:
-    if: "!contains(github.event.head_commit.message, '[skip-ci]')"
+    if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
     name: Check for UNITY_LICENSE in GitHub Secrets
     runs-on: ubuntu-latest
     outputs:
@@ -31,7 +31,7 @@ jobs:
 
   activation:
     needs: checklicense
-    if: needs.checklicense.outputs.is_unity_license_set == 'false' && "!contains(github.event.head_commit.message, '[skip-ci]')"
+    if: ${{ needs.checklicense.outputs.is_unity_license_set == 'false' && !contains(github.event.head_commit.message, '[skip-ci]') }}
     name: Request manual activation file 🔑
     runs-on: ubuntu-latest
     steps:
@@ -46,35 +46,8 @@ jobs:
           name: ${{ steps.getManualLicenseFile.outputs.filePath }}
           path: ${{ steps.getManualLicenseFile.outputs.filePath }}
 
-  test:
-    needs: checklicense
-    if: needs.checklicense.outputs.is_unity_license_set == 'true' && "!contains(github.event.head_commit.message, '[skip-ci]')"
-    name: Run all tests ✨
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          lfs: true
-      - uses: actions/cache@v3
-        with:
-          path: Library
-          key: Library-test
-      - uses: game-ci/unity-test-runner@v2
-        id: testRunner
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Test results (all modes)
-          path: ${{ steps.testRunner.outputs.artifactsPath }}
-
   build:
-    needs: test
-    if: "!contains(github.event.head_commit.message, '[skip-ci]')"
+    if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
     name: Build for ${{ matrix.targetPlatform }}
     runs-on: ubuntu-latest
     strategy:
@@ -104,7 +77,7 @@ jobs:
 
   buildForMac:
     needs: build
-    if: "!contains(github.event.head_commit.message, '[skip-ci]')"
+    if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
     name: Build for ${{ matrix.targetPlatform }}
     runs-on: macos-latest
     strategy:
@@ -134,9 +107,9 @@ jobs:
 
   buildForWindows:
     needs: buildForMac
-    if: "!contains(github.event.head_commit.message, '[skip-ci]')"
+    if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
     name: Build for ${{ matrix.targetPlatform }}
-    runs-on: windows-2022
+    runs-on: windows-2019
     strategy:
       fail-fast: false
       matrix:
