@@ -82,4 +82,4 @@ Per utilizzare LiveSplit con **Europa**, segui questi passaggi:
     - Lancia il gioco **Europa**.
     - Goditi le tue speedrun con il supporto di LiveSplit.
 
-Questa integrazione permette al gioco di comunicare direttamente con LiveSplit, impostando automaticamente i tempi al cambio di livello.
+Questa integrazione permette al gioco di comunicare direttamente con LiveSplit, impostando automaticamente i tempi al cambio di livello e terminando il timer alla fine.
