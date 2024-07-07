@@ -9,17 +9,16 @@ on:
       - 'README.md'
   workflow_dispatch: {}
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 ### Refer to https://game.ci/docs/github/getting-started
 jobs:
-  build:
+  buildLinux:
     if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
-    name: Build for ${{ matrix.targetPlatform }}
+    name: Build for StandaloneLinux64
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        targetPlatform:
-          - StandaloneLinux64
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,28 +26,24 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: Library
-          key: Library-${{ matrix.targetPlatform }}
+          key: Library-StandaloneLinux64
       - uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          targetPlatform: ${{ matrix.targetPlatform }}
+          targetPlatform: StandaloneLinux64
       - uses: actions/upload-artifact@v3
         with:
-          name: Build-${{ matrix.targetPlatform }}
+          name: Build-StandaloneLinux64
           path: build
 
-  buildForMac:
+  buildMac:
     if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
-    name: Build for ${{ matrix.targetPlatform }}
+    name: Build for StandaloneOSX
     runs-on: macos-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        targetPlatform:
-          - StandaloneOSX
+    needs: buildLinux
     steps:
       - uses: actions/checkout@v4
         with:
@@ -56,30 +51,24 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: Library
-          key: Library-${{ matrix.targetPlatform }}
+          key: Library-StandaloneOSX
       - uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          targetPlatform: ${{ matrix.targetPlatform }}
+          targetPlatform: StandaloneOSX
       - uses: actions/upload-artifact@v3
         with:
-          name: Build-${{ matrix.targetPlatform }}
+          name: Build-StandaloneOSX
           path: build
 
-  buildForWindows:
+  buildWindowsStandalone:
     if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
-    name: Build for ${{ matrix.targetPlatform }}
+    name: Build for StandaloneWindows
     runs-on: windows-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        targetPlatform:
-          - StandaloneWindows
-          - StandaloneWindows64
-          - WSAPlayer
+    needs: buildMac
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
@@ -88,24 +77,76 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: Library
-          key: Library-${{ matrix.targetPlatform }}
+          key: Library-StandaloneWindows
       - uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          targetPlatform: ${{ matrix.targetPlatform }}
+          targetPlatform: StandaloneWindows
       - uses: actions/upload-artifact@v3
         with:
-          name: Build-${{ matrix.targetPlatform }}
+          name: Build-StandaloneWindows
+          path: build
+
+  buildWindows64:
+    if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
+    name: Build for StandaloneWindows64
+    runs-on: windows-latest
+    needs: buildWindowsStandalone
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-StandaloneWindows64
+      - uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: StandaloneWindows64
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Build-StandaloneWindows64
+          path: build
+
+  buildWSAPlayer:
+    if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
+    name: Build for WSAPlayer
+    runs-on: windows-latest
+    needs: buildWindows64
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-WSAPlayer
+      - uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: WSAPlayer
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Build-WSAPlayer
           path: build
 
   release:
     if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
     name: Create GitHub Release
     runs-on: ubuntu-latest
-    needs: [build, buildForMac, buildForWindows]
+    needs: [buildLinux, buildMac, buildWSAPlayer]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -120,6 +161,36 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: true
           prerelease: false
+
+      - name: Download Linux Build
+        uses: actions/download-artifact@v3
+        with:
+          name: Build-StandaloneLinux64
+          path: ./build/StandaloneLinux64
+
+      - name: Download macOS Build
+        uses: actions/download-artifact@v3
+        with:
+          name: Build-StandaloneOSX
+          path: ./build/StandaloneOSX
+
+      - name: Download Windows Build (Standalone)
+        uses: actions/download-artifact@v3
+        with:
+          name: Build-StandaloneWindows
+          path: ./build/StandaloneWindows
+
+      - name: Download Windows Build (Standalone64)
+        uses: actions/download-artifact@v3
+        with:
+          name: Build-StandaloneWindows64
+          path: ./build/StandaloneWindows64
+
+      - name: Download WSAPlayer Build
+        uses: actions/download-artifact@v3
+        with:
+          name: Build-WSAPlayer
+          path: ./build/WSAPlayer
 
       - name: Upload Linux Build
         uses: actions/upload-release-asset@v1
@@ -141,7 +212,17 @@ jobs:
           asset_name: StandaloneOSX.zip
           asset_content_type: application/zip
 
-      - name: Upload Windows Build
+      - name: Upload Windows Build (Standalone)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./build/StandaloneWindows
+          asset_name: StandaloneWindows.zip
+          asset_content_type: application/zip
+
+      - name: Upload Windows Build (Standalone64)
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -149,4 +230,14 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./build/StandaloneWindows64
           asset_name: StandaloneWindows64.zip
+          asset_content_type: application/zip
+
+      - name: Upload WSAPlayer Build
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./build/WSAPlayer
+          asset_name: WSAPlayer.zip
           asset_content_type: application/zip
