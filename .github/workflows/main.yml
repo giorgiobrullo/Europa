@@ -125,11 +125,11 @@ jobs:
           name: Build-StandaloneLinux64
           path: ./build/StandaloneLinux64
 
-      - name: Download macOS Build
-        uses: actions/download-artifact@v3
-        with:
-          name: Build-StandaloneOSX
-          path: ./build/StandaloneOSX
+    #  - name: Download macOS Build
+    #    uses: actions/download-artifact@v3
+    #    with:
+    #      name: Build-StandaloneOSX
+    #      path: ./build/StandaloneOSX
 
       - name: Download Windows Build (Standalone)
         uses: actions/download-artifact@v3
@@ -152,8 +152,8 @@ jobs:
       - name: Upload Linux Build to Release
         run: gh release upload ${{ steps.create_release.outputs.tag }} ./build/StandaloneLinux64/*
 
-      - name: Upload macOS Build to Release
-        run: gh release upload ${{ steps.create_release.outputs.tag }} ./build/StandaloneOSX/*
+     # - name: Upload macOS Build to Release
+     #   run: gh release upload ${{ steps.create_release.outputs.tag }} ./build/StandaloneOSX/*
 
       - name: Upload Windows Build (Standalone) to Release
         run: gh release upload ${{ steps.create_release.outputs.tag }} ./build/StandaloneWindows/*
