@@ -13,7 +13,6 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-### Refer to https://game.ci/docs/github/getting-started
 jobs:
   buildLinux:
     if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
@@ -101,17 +100,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: true
-          prerelease: false
-
       - name: Download Linux Build
         uses: actions/download-artifact@v3
         with:
@@ -142,52 +130,15 @@ jobs:
           name: Build-WSAPlayer
           path: ./build/WSAPlayer
 
-      - name: Upload Linux Build
-        uses: actions/upload-release-asset@v1
+      - name: Create GitHub Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            ./build/StandaloneLinux64/*
+            ./build/StandaloneOSX/*
+            ./build/StandaloneWindows/*
+            ./build/StandaloneWindows64/*
+            ./build/WSAPlayer/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/StandaloneLinux64
-          asset_name: StandaloneLinux64.zip
-          asset_content_type: application/zip
-
-      - name: Upload macOS Build
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/StandaloneOSX
-          asset_name: StandaloneOSX.zip
-          asset_content_type: application/zip
-
-      - name: Upload Windows Build (Standalone)
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/StandaloneWindows
-          asset_name: StandaloneWindows.zip
-          asset_content_type: application/zip
-
-      - name: Upload Windows Build (Standalone64)
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/StandaloneWindows64
-          asset_name: StandaloneWindows64.zip
-          asset_content_type: application/zip
-
-      - name: Upload WSAPlayer Build
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/WSAPlayer
-          asset_name: WSAPlayer.zip
-          asset_content_type: application/zip
