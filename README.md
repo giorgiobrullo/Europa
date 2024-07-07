@@ -39,22 +39,22 @@ Il giocatore controlla un pinguino eroico dotato di abilità speciali come il do
 | Presenza di nemici/sfida            | ✅ 1      |                                   |
 | Presenza di nemici/sfida->Livelli di difficoltà | ✅ 1      | Cute, Normal, Hardcore            |
 | Presenza di nemici/sfida->Difficoltà crescente | ❌ NO     |                                   |
-| Presenza di nemici/sfida->AI Base| ✅ 1     |                                   |
+| Presenza di nemici/sfida->AI Base| ✅ 1     |   Bat, Slime (GenericEnemy)       |
 | Presenza di nemici/sfida->AI Complicata| ❌ NO    |                                   |
 | Presenza di nemici/sfida->Multiplayer Locale| ❌ NO    |                                   |
 
 ### Strutture
 | Elemento                            | Punteggio | Note                              |
 |-------------------------------------|-----------|-----------------------------------|
-| PlayerPrefs                               | ✅ 0.5      | e.g. inserire link    |
+| PlayerPrefs                               | ✅ 0.5      | e.g. [1](https://github.com/giorgiobrullo/Europa/blob/e9d3f18855ff750e567a1dec6bd14d06ece1c7c5/Assets/Scripts/Menu/Menu.cs#L20-L30) [2](https://github.com/giorgiobrullo/Europa/blob/e9d3f18855ff750e567a1dec6bd14d06ece1c7c5/Assets/Scripts/Other/CreditScroller.cs#L95-L101)    |
 | Singleton (4*1.0)                     | ✅ 4      | Powerup vita, attacco e difesa    |
-| Coroutines (4*0.5)                   | ✅ 2     |                                   |
+| Coroutines (4*0.5)                   | ✅ 2     |  e.g. [1](https://github.com/giorgiobrullo/Europa/blob/b7dcb85ac2d21f484087f8309e1e1dd15e6b3202/Assets/Scripts/Volume/VolumeController.cs#L63) [2](https://github.com/giorgiobrullo/Europa/blob/b7dcb85ac2d21f484087f8309e1e1dd15e6b3202/Assets/Scripts/Traps/FireTrap.cs#L33) [3](https://github.com/giorgiobrullo/Europa/blob/b7dcb85ac2d21f484087f8309e1e1dd15e6b3202/Assets/Scripts/Enemies/Generic/EnemyMovement.cs#L106) [4](https://github.com/giorgiobrullo/Europa/blob/e9d3f18855ff750e567a1dec6bd14d06ece1c7c5/Assets/Scripts/Other/Portal.cs#L47)                                 |
 | Enums           | ❌ NO     |                                   |
 | Classi statiche | ❌ NO      |             |
 | Generics | ❌ NO     |                                   |
-| Method overload | ✅ 0.5     |  e.g.                                 |
-| Presenza di ereditarietà| ✅ 1    |                                   |
-| Presenza di ereditarietà->Overriding| ✅ 0.5    |                                   |
+| Method overload | ❌ NO     |                                |
+| Presenza di ereditarietà| ✅ 1    |  e.g. [1](https://github.com/giorgiobrullo/Europa/blob/e9d3f18855ff750e567a1dec6bd14d06ece1c7c5/Assets/Scripts/Items/DroppedCoin.cs#L6)                                 |
+| Presenza di ereditarietà->Overriding| ✅ 0.5    | e.g. [1](https://github.com/giorgiobrullo/Europa/blob/e9d3f18855ff750e567a1dec6bd14d06ece1c7c5/Assets/Scripts/Items/DroppedCoin.cs#L8)                                  |
 | Interfacce| ❌ NO    |                                   |
 | ExtensionsMethods| ❌ NO    |                                   |
 | Delegates| ❌ NO    |                                   |
@@ -62,12 +62,12 @@ Il giocatore controlla un pinguino eroico dotato di abilità speciali come il do
 ### EXTRA
 | Elemento                            | Punteggio | Note                              |
 |-------------------------------------|-----------|-----------------------------------|
-| Animazioni originali (2*0.5)| ✅ 1    |                                   |
-| Sound->Soundtrack| ✅ 0.5    |                                   |
-| Sound->Altri suoni (3*0.5)| ✅ 1.5    |                                   |
-| Raycast| ✅ 1    |                                   |
-| User interface (6*0.5)| ✅ 3    |                                   |
-| Particelle (3*0.5)                             | ✅ 1.5      |     |
+| Animazioni originali (2*0.5)| ✅ 1    |  Bat, Slime, Traps                                 |
+| Sound->Soundtrack| ✅ 0.5    |  Soundtrack ogni livello e menù                                 |
+| Sound->Altri suoni (3*0.5)| ✅ 1.5    |   [Cartella suoni](https://github.com/giorgiobrullo/Europa/tree/main/Assets/Sounds)                                |
+| Raycast| ✅ 1    |   e.g. [1](https://github.com/giorgiobrullo/Europa/blob/e9d3f18855ff750e567a1dec6bd14d06ece1c7c5/Assets/Scripts/Traps/Rockhead.cs#L117) [2](https://github.com/giorgiobrullo/Europa/blob/e9d3f18855ff750e567a1dec6bd14d06ece1c7c5/Assets/Scripts/Enemies/Generic/EnemyMovement.cs#L45)                                |
+| User interface (6*0.5)| ✅ 3    |  Barra Vita, Testo Shield, Testo Attack, Testo difficoltà, GameOver, MenuInGame                                 |
+| Particelle (3*0.5)                             | ✅ 1.5      |  Rockhead (quanto hitta il muro), Big Coin, Player   |
 
 ## Integrazione con LiveSplit
 
