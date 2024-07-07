@@ -73,6 +73,7 @@ Il giocatore controlla un pinguino eroico dotato di abilità speciali come il do
 | User interface (6*0.5)| ✅ 3    |  Barra Vita, Testo Shield, Testo Attack, Testo difficoltà, GameOver, MenuInGame, Testo tutorial, Dialoghi NPC                                 |
 | Particelle (3*0.5)                             | ✅ 1.5      |  Rockhead (quanto hitta il muro), Big Coin, Player   |
 
+Totale: 32.0
 ## Integrazione con LiveSplit
 
 **Europa** è ottimizzato per gli appassionati di speedrun e offre un'integrazione semplice con LiveSplit, un popolare timer di speedrun. LiveSplit è un'applicazione di temporizzazione altamente personalizzabile, utilizzata dai giocatori per cronometrarsi durante le speedrun.
