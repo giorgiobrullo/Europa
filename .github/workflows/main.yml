@@ -114,9 +114,12 @@ jobs:
 
       - name: Create Tag and Release
         id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TAG_NAME=v0.1.${{ github.run_number }}
-          gh release create $TAG_NAME --title "Release $TAG_NAME" --notes "Automated release by GitHub Actions"
+          RELEASE_NAME="Release $TAG_NAME"
+          gh release create $TAG_NAME --title "$RELEASE_NAME" --notes "Automated release by GitHub Actions"
           echo "::set-output name=tag::$TAG_NAME"
 
       - name: Download Linux Build
@@ -125,11 +128,11 @@ jobs:
           name: Build-StandaloneLinux64
           path: ./build/StandaloneLinux64
 
-    #  - name: Download macOS Build
-    #    uses: actions/download-artifact@v3
-    #    with:
-    #      name: Build-StandaloneOSX
-    #      path: ./build/StandaloneOSX
+      # - name: Download macOS Build
+      #   uses: actions/download-artifact@v3
+      #   with:
+      #     name: Build-StandaloneOSX
+      #     path: ./build/StandaloneOSX
 
       - name: Download Windows Build (Standalone)
         uses: actions/download-artifact@v3
@@ -149,17 +152,42 @@ jobs:
           name: Build-WSAPlayer
           path: ./build/WSAPlayer
 
-      - name: Upload Linux Build to Release
-        run: gh release upload ${{ steps.create_release.outputs.tag }} ./build/StandaloneLinux64/*
+      - name: Compress Linux Build
+        run: zip -r StandaloneLinux64.zip ./build/StandaloneLinux64
 
-     # - name: Upload macOS Build to Release
-     #   run: gh release upload ${{ steps.create_release.outputs.tag }} ./build/StandaloneOSX/*
+      # - name: Compress macOS Build
+      #   run: zip -r StandaloneOSX.zip ./build/StandaloneOSX
+
+      - name: Compress Windows Build (Standalone)
+        run: zip -r StandaloneWindows.zip ./build/StandaloneWindows
+
+      - name: Compress Windows Build (Standalone64)
+        run: zip -r StandaloneWindows64.zip ./build/StandaloneWindows64
+
+      - name: Compress WSAPlayer Build
+        run: zip -r WSAPlayer.zip ./build/WSAPlayer
+
+      - name: Upload Linux Build to Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload ${{ steps.create_release.outputs.tag }} StandaloneLinux64.zip
+
+      # - name: Upload macOS Build to Release
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: gh release upload ${{ steps.create_release.outputs.tag }} StandaloneOSX.zip
 
       - name: Upload Windows Build (Standalone) to Release
-        run: gh release upload ${{ steps.create_release.outputs.tag }} ./build/StandaloneWindows/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload ${{ steps.create_release.outputs.tag }} StandaloneWindows.zip
 
       - name: Upload Windows Build (Standalone64) to Release
-        run: gh release upload ${{ steps.create_release.outputs.tag }} ./build/StandaloneWindows64/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload ${{ steps.create_release.outputs.tag }} StandaloneWindows64.zip
 
       - name: Upload WSAPlayer Build to Release
-        run: gh release upload ${{ steps.create_release.outputs.tag }} ./build/WSAPlayer/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload ${{ steps.create_release.outputs.tag }} WSAPlayer.zip
