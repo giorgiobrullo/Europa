@@ -80,6 +80,7 @@ jobs:
           - StandaloneWindows
           - StandaloneWindows64
           - WSAPlayer
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
         with:
