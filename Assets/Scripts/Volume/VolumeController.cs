@@ -11,7 +11,7 @@ namespace Volume
         [SerializeField] private float fadeDuration = 3f;
 
         public static VolumeController Instance { get; private set; }
-        
+
         private void Awake()
         {
             if (Instance == null)
@@ -31,28 +31,34 @@ namespace Volume
             _audioSrc.volume = 0;
             FadeVolume(_audioVolume, fadeDuration);
         }
-        
 
-        public void SetVolume(Single vol)
+        public void SetVolume(float vol)
         {
             if (!Mathf.Approximately(_audioVolume, vol))
             {
                 // Stop coroutine if it's running
                 StopAllCoroutines();
-                
-                //Debug.Log("Setting Volume to " + vol);
+
+                // Debug.Log("Setting Volume to " + vol);
                 _audioVolume = vol;
                 _audioSrc.volume = _audioVolume;
                 PlayerPrefs.SetFloat("AudioVolume", _audioVolume);
                 PlayerPrefs.Save();
             }
         }
-        
-        public void SetSfxVolume(Single vol)
+
+        public void SetSfxVolume(float vol)
         {
-                Debug.Log("Setting SFX volume to " + vol);
-                PlayerPrefs.SetFloat("SFXAudioVolume", vol);
-                PlayerPrefs.Save();
+            //Debug.Log("Setting SFX volume to " + vol);
+            PlayerPrefs.SetFloat("SFXAudioVolume", vol);
+            PlayerPrefs.Save();
+            
+            // Find all existing SFXVolume objects and update their volume
+            SfxVolume[] sfxVolumes = FindObjectsOfType<SfxVolume>();
+            foreach (SfxVolume sfxVolume in sfxVolumes)
+            {
+                sfxVolume.UpdateSfxVolume(vol);
+            }
         }
 
         private void FadeVolume(float targetVolume, float duration)
@@ -67,17 +73,16 @@ namespace Volume
 
             while (time < duration)
             {
-                //Debug.Log("Set volume to " + Mathf.Lerp(startVolume, targetVolume, time / duration));
+                // Debug.Log("Set volume to " + Mathf.Lerp(startVolume, targetVolume, time / duration));
                 _audioSrc.volume = Mathf.Lerp(startVolume, targetVolume, time / duration);
                 time += Time.deltaTime;
                 yield return null;
             }
 
             _audioSrc.volume = targetVolume;
-            
+
             PlayerPrefs.SetFloat("AudioVolume", targetVolume);
             PlayerPrefs.Save();
         }
-
     }
 }
