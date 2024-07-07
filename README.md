@@ -66,7 +66,7 @@ Il giocatore controlla un pinguino eroico dotato di abilità speciali come il do
 | Sound->Soundtrack| ✅ 0.5    |  Soundtrack ogni livello e menù                                 |
 | Sound->Altri suoni (3*0.5)| ✅ 1.5    |   [Cartella suoni](https://github.com/giorgiobrullo/Europa/tree/main/Assets/Sounds)                                |
 | Raycast| ✅ 1    |   e.g. [1](https://github.com/giorgiobrullo/Europa/blob/e9d3f18855ff750e567a1dec6bd14d06ece1c7c5/Assets/Scripts/Traps/Rockhead.cs#L117) [2](https://github.com/giorgiobrullo/Europa/blob/e9d3f18855ff750e567a1dec6bd14d06ece1c7c5/Assets/Scripts/Enemies/Generic/EnemyMovement.cs#L45)                                |
-| User interface (6*0.5)| ✅ 3    |  Barra Vita, Testo Shield, Testo Attack, Testo difficoltà, GameOver, MenuInGame                                 |
+| User interface (6*0.5)| ✅ 3    |  Barra Vita, Testo Shield, Testo Attack, Testo difficoltà, GameOver, MenuInGame, Testo tutorial, Dialoghi NPC                                 |
 | Particelle (3*0.5)                             | ✅ 1.5      |  Rockhead (quanto hitta il muro), Big Coin, Player   |
 
 ## Integrazione con LiveSplit
