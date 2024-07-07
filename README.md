@@ -2,6 +2,10 @@
 Europa è un platform in 2D con elementi di combattimento, sviluppato come progetto di Sviluppo di Giochi Digitali. Ambientato sul pianeta Europa, una delle lune di Giove, il gioco consiste in quattro livelli distinti, ciascuno con ambientazioni e sfide uniche. Tutti i diritti degli asset utilizzati sono riservati ai rispettivi autori.
 
 Il giocatore controlla un pinguino eroico dotato di abilità speciali come il doppio salto e attacchi. Durante il gioco, il pinguino può raccogliere power-up che lo aiuteranno a superare le sfide più difficili. Oltre al combattimento, il gioco include sezioni di platforming impegnative, con ostacoli come thwomp, palle rotanti e piattaforme che cadono.
+## Download
+- [Codice sorgente](https://github.com/giorgiobrullo/Europa/archive/refs/heads/main.zip)
+- [Build del gioco (OSX, Linux64, Windows32/64)](https://github.com/giorgiobrullo/Europa/releases/latest)
+
 ## Tabella di Punteggi
 
 ### Impostazioni generali 
