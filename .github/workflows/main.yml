@@ -41,7 +41,6 @@ jobs:
           path: build
 
   buildForMac:
-    needs: build
     if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
     name: Build for ${{ matrix.targetPlatform }}
     runs-on: macos-latest
@@ -71,10 +70,9 @@ jobs:
           path: build
 
   buildForWindows:
-    needs: buildForMac
     if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
     name: Build for ${{ matrix.targetPlatform }}
-    runs-on: windows-2019
+    runs-on: windows-2022
     strategy:
       fail-fast: false
       matrix:
