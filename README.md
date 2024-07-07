@@ -2,6 +2,10 @@
 Europa è un platform in 2D con elementi di combattimento, sviluppato come progetto di Sviluppo di Giochi Digitali. Ambientato sul pianeta Europa, una delle lune di Giove, il gioco consiste in quattro livelli distinti, ciascuno con ambientazioni e sfide uniche. Tutti i diritti degli asset utilizzati sono riservati ai rispettivi autori.
 
 Il giocatore controlla un pinguino eroico dotato di abilità speciali come il doppio salto e attacchi. Durante il gioco, il pinguino può raccogliere power-up che lo aiuteranno a superare le sfide più difficili. Oltre al combattimento, il gioco include sezioni di platforming impegnative, con ostacoli come thwomp, palle rotanti e piattaforme che cadono.
+## Download
+- [Codice sorgente](https://github.com/giorgiobrullo/Europa/archive/refs/heads/main.zip)
+- [Build del gioco (OSX, Linux64, Windows32/64)](https://github.com/giorgiobrullo/Europa/releases/latest)
+
 ## Tabella di Punteggi
 
 ### Impostazioni generali 
@@ -83,3 +87,9 @@ Per utilizzare LiveSplit con **Europa**, segui questi passaggi:
     - Goditi le tue speedrun con il supporto di LiveSplit.
 
 Questa integrazione permette al gioco di comunicare direttamente con LiveSplit, impostando automaticamente i tempi al cambio di livello e terminando il timer alla fine.
+
+WR speedrun Any% Normal:
+
+[![Youtube video preview](http://img.youtube.com/vi/sOLZ3imw2ZA/0.jpg)](http://www.youtube.com/watch?v=sOLZ3imw2ZA "Europa - Any% Normal - WR 2:14.90")
+
+
