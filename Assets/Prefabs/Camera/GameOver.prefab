@@ -255,6 +255,8 @@ MonoBehaviour:
   stats: {fileID: 0}
   goBackToMenu: {fileID: 3584988502523520183}
   goBackToMenuText: {fileID: 2118998335679539305}
+  loadAutoSave: {fileID: 1013662126976605643}
+  loadAutoSaveText: {fileID: 1009984314122736848}
 --- !u!1 &3009230290980412991
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,8 +293,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 455.64612, y: -198.989}
-  m_SizeDelta: {x: 755.4916, y: 99.298}
+  m_AnchoredPosition: {x: 485.0302, y: -198.989}
+  m_SizeDelta: {x: 841.836, y: 99.298}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5534704787529178478
 CanvasRenderer:
@@ -436,8 +438,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -429.9972, y: -198.989}
-  m_SizeDelta: {x: 543.783, y: 99.298}
+  m_AnchoredPosition: {x: -493.867, y: -198.989}
+  m_SizeDelta: {x: 817.891, y: 99.298}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2087746330693733954
 CanvasRenderer:
@@ -516,7 +518,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 978206192204251619}
   m_OnClick:
     m_PersistentCalls:
@@ -691,7 +693,7 @@ GameObject:
   - component: {fileID: 3828483894914052568}
   - component: {fileID: 1009984314122736848}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Text_loadcheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("fallDelay", "initialFallSpeed", "acceleration", "playerLayer", "_rb", "_isFalling", "enabled", "name")]
+	[ES3PropertiesAttribute("fallDelay", "initialFallSpeed", "acceleration", "playerLayer", "_rb", "_isFalling", "_currentFallSpeed", "enabled", "name")]
 	public class ES3UserType_FallingPlatform : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -22,6 +22,7 @@ namespace ES3Types
 			writer.WriteProperty("playerLayer", instance.playerLayer, ES3Type_LayerMask.Instance);
 			writer.WritePrivateFieldByRef("_rb", instance);
 			writer.WritePrivateField("_isFalling", instance);
+			writer.WritePrivateField("_currentFallSpeed", instance);
 			writer.WriteProperty("enabled", instance.enabled, ES3Type_bool.Instance);
 		}
 
@@ -50,6 +51,9 @@ namespace ES3Types
 					break;
 					case "_isFalling":
 					instance = (Traps.FallingPlatform)reader.SetPrivateField("_isFalling", reader.Read<System.Boolean>(), instance);
+					break;
+					case "_currentFallSpeed":
+					instance = (Traps.FallingPlatform)reader.SetPrivateField("_currentFallSpeed", reader.Read<System.Single>(), instance);
 					break;
 					case "enabled":
 						instance.enabled = reader.Read<System.Boolean>(ES3Type_bool.Instance);

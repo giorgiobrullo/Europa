@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("size", "edgeRadius", "autoTiling", "density", "isTrigger", "usedByEffector", "usedByComposite", "offset", "sharedMaterial", "layerOverridePriority", "excludeLayers", "includeLayers", "forceSendLayers", "forceReceiveLayers", "contactCaptureLayers", "callbackLayers", "enabled", "name")]
+	[ES3PropertiesAttribute("size", "edgeRadius", "autoTiling", "isTrigger", "usedByEffector", "usedByComposite", "offset", "sharedMaterial", "layerOverridePriority", "excludeLayers", "includeLayers", "forceSendLayers", "forceReceiveLayers", "contactCaptureLayers", "callbackLayers", "enabled", "name")]
 	public class ES3UserType_BoxCollider2D : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -19,7 +19,6 @@ namespace ES3Types
 			writer.WriteProperty("size", instance.size, ES3Type_Vector2.Instance);
 			writer.WriteProperty("edgeRadius", instance.edgeRadius, ES3Type_float.Instance);
 			writer.WriteProperty("autoTiling", instance.autoTiling, ES3Type_bool.Instance);
-			writer.WriteProperty("density", instance.density, ES3Type_float.Instance);
 			writer.WriteProperty("isTrigger", instance.isTrigger, ES3Type_bool.Instance);
 			writer.WriteProperty("usedByEffector", instance.usedByEffector, ES3Type_bool.Instance);
 			writer.WriteProperty("usedByComposite", instance.usedByComposite, ES3Type_bool.Instance);
@@ -51,9 +50,6 @@ namespace ES3Types
 						break;
 					case "autoTiling":
 						instance.autoTiling = reader.Read<System.Boolean>(ES3Type_bool.Instance);
-						break;
-					case "density":
-						instance.density = reader.Read<System.Single>(ES3Type_float.Instance);
 						break;
 					case "isTrigger":
 						instance.isTrigger = reader.Read<System.Boolean>(ES3Type_bool.Instance);

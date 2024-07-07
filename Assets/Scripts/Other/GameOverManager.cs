@@ -11,12 +11,16 @@ namespace Other
     public class GameOverManager : MonoBehaviour
     {
         [SerializeField] private Stats stats;
+        
         [SerializeField] private Button goBackToMenu;
         [SerializeField] private TextMeshProUGUI goBackToMenuText; // Assuming you have a Text component for the button text
-        private bool _isButtonEnabled = true;
-
-        public bool IsButtonEnabled => _isButtonEnabled;
-
+        
+        [SerializeField] private Button loadAutoSave;
+        [SerializeField] private TextMeshProUGUI loadAutoSaveText; // Assuming you have a Text component for the button text
+        
+        private bool _isBackEnabled = true;
+        private bool _isLoadEnabled = true;
+        
         public static GameOverManager Instance { get; private set; }
 
         private void Awake()
@@ -34,35 +38,44 @@ namespace Other
         
         private void OnEnable()
         {
-            _isButtonEnabled = false;
-            StartCoroutine(EnableButtonWithDelay(3)); // Start the coroutine to enable the button after 3 seconds
+            _isBackEnabled = false;
+            _isLoadEnabled = false;
+            StartCoroutine(EnableButtonWithDelay(3, goBackToMenu, goBackToMenuText, true)); // Start the coroutine to enable the button after 3 seconds
+            StartCoroutine(EnableButtonWithDelay(0.5f, loadAutoSave, loadAutoSaveText, false)); // Start the coroutine to enable the button after 3 seconds
         }
 
         public void LoadAutoSave()
         {
+            if (!_isLoadEnabled) return;
+            goBackToMenuText.text = "Back to Main Menu";
+
             ES3AutoSaveMgr.Current.Load();
             DestroyAllGenericItems();
             goBackToMenu.interactable = false; 
+            loadAutoSave.interactable = false;
             stats.TriggerCheckpointSequence();
         }
 
         public void BackToMenu()
         {
-            if(_isButtonEnabled)
+            if(_isBackEnabled)
                 SceneManager.LoadScene("Menu");    
         }
 
-        private IEnumerator EnableButtonWithDelay(int delay)
+        private IEnumerator EnableButtonWithDelay(float delay, Button button, TextMeshProUGUI text, bool isBackButton = false)
         {
-            for (int i = delay; i > 0; i--)
+            string originalText = text.text; // Store the original button text
+            for (float i = delay; i > 0.0f; i-=0.5f)
             {
-                goBackToMenuText.text = $"Back to Menu Main ({i}s)"; // Update the button text with the countdown
-                yield return new WaitForSeconds(1); // Wait for 1 second
+                text.text = $"{originalText} ({i}s)"; // Update the button text with the countdown
+                yield return new WaitForSeconds(0.5f); // Wait for 0.5 seconds
             }
 
-            goBackToMenuText.text = "Back to Main Menu"; // Reset the button text
-            goBackToMenu.interactable = true; // Enable the button
-            _isButtonEnabled = true;
+            text.text = originalText; // Reset the button text
+            button.interactable = true; // Enable the button
+            
+            if(isBackButton) _isBackEnabled = true;
+            else _isLoadEnabled = true;
         }
         
         public void DestroyAllGenericItems()

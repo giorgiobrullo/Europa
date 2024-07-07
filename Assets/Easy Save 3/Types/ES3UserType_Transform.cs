@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("position", "localPosition", "eulerAngles", "localEulerAngles", "right", "up", "forward", "rotation", "localRotation", "localScale", "parent", "parentInternal", "hasChanged", "hierarchyCapacity", "constrainProportionsScale", "name")]
+	[ES3PropertiesAttribute("position", "localPosition", "eulerAngles", "localEulerAngles", "right", "up", "forward", "rotation", "localRotation", "localScale", "parent", "parentInternal", "hasChanged", "constrainProportionsScale", "name")]
 	public class ES3UserType_Transform : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -29,7 +29,6 @@ namespace ES3Types
 			writer.WritePropertyByRef("parent", instance.parent);
 			writer.WritePrivatePropertyByRef("parentInternal", instance);
 			writer.WriteProperty("hasChanged", instance.hasChanged, ES3Type_bool.Instance);
-			writer.WriteProperty("hierarchyCapacity", instance.hierarchyCapacity, ES3Type_int.Instance);
 			writer.WritePrivateProperty("constrainProportionsScale", instance);
 		}
 
@@ -79,9 +78,6 @@ namespace ES3Types
 					break;
 					case "hasChanged":
 						instance.hasChanged = reader.Read<System.Boolean>(ES3Type_bool.Instance);
-						break;
-					case "hierarchyCapacity":
-						instance.hierarchyCapacity = reader.Read<System.Int32>(ES3Type_int.Instance);
 						break;
 					case "constrainProportionsScale":
 					instance = (UnityEngine.Transform)reader.SetPrivateProperty("constrainProportionsScale", reader.Read<System.Boolean>(), instance);
