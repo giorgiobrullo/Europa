@@ -87,3 +87,9 @@ Per utilizzare LiveSplit con **Europa**, segui questi passaggi:
     - Goditi le tue speedrun con il supporto di LiveSplit.
 
 Questa integrazione permette al gioco di comunicare direttamente con LiveSplit, impostando automaticamente i tempi al cambio di livello e terminando il timer alla fine.
+
+WR speedrun Any% Normal:
+
+[![Youtube video preview](http://img.youtube.com/vi/sOLZ3imw2ZA/0.jpg)](http://www.youtube.com/watch?v=sOLZ3imw2ZA "Europa - Any% Normal - WR 2:14.90")
+
+
