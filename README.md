@@ -6,9 +6,9 @@ Il giocatore controlla un pinguino eroico dotato di abilità speciali come il do
 - [Codice sorgente](https://github.com/giorgiobrullo/Europa/archive/refs/heads/main.zip)
 - [Build del gioco (OSX, Linux64, Windows32/64)](https://github.com/giorgiobrullo/Europa/releases/latest)
 
-## Note
-- Le falling platform una volta cadute non tornano nella loro posizione originaria. Questo comportamento è voluto, forzando il giocatore a morire (perdendo tempo) per resettarle.
-- Le faling platform nell'ultimo livello cadono sulle spikes, facendo comunque in modo che un giocatore sopra non prenda danno. Questo comportamento è voluto, il motivo delle falling platform in quella zona è rendere più difficile il salto.
+## Nota
+- Le piattaforme cadenti, una volta precipitate, non ritornano nella loro posizione originale. Questo comportamento è intenzionale, costringendo il giocatore a morire (perdendo tempo) per resettarle.
+- Nell'ultimo livello, le piattaforme cadenti finiscono sulle punte, garantendo comunque che un giocatore sopra di esse non subisca danni. Questo comportamento è voluto; l'obiettivo delle piattaforme cadenti in quella zona è rendere più difficoltosi i salti.
 
 ## Tabella di Punteggi
 
