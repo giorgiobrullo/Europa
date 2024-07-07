@@ -95,7 +95,7 @@ jobs:
     if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
     name: Create GitHub Release
     runs-on: ubuntu-latest
-    needs: [buildLinux, buildWindows]
+    needs: [buildLinux, buildWindows, buildMac]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
