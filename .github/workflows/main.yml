@@ -100,6 +100,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Create Tag
+        id: create_tag
+        run: |
+          TAG_NAME=v0.1.${{ github.run_number }}
+          git tag $TAG_NAME
+          git push origin $TAG_NAME
+          echo "::set-output name=tag::$TAG_NAME"
+
       - name: Download Linux Build
         uses: actions/download-artifact@v3
         with:
@@ -134,6 +142,7 @@ jobs:
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: ${{ steps.create_tag.outputs.tag }}
           files: |
             ./build/StandaloneLinux64/*
             ./build/StandaloneOSX/*
