@@ -97,4 +97,7 @@ WR speedrun Any% Normal:
 
 [![Youtube video preview](http://img.youtube.com/vi/sOLZ3imw2ZA/0.jpg)](http://www.youtube.com/watch?v=sOLZ3imw2ZA "Europa - Any% Normal - WR 2:14.90")
 
+## Hall of fame
+Lista dei giocatori che hanno finito il gioco in Hardcore:
+- forceman25
 
