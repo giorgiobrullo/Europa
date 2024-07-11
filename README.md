@@ -9,6 +9,7 @@ Il giocatore controlla un pinguino eroico dotato di abilità speciali come il do
 ## Nota
 - Le piattaforme cadenti, una volta precipitate, non ritornano nella loro posizione originale. Questo comportamento è intenzionale, costringendo il giocatore a morire (perdendo tempo) per resettarle.
 - Nell'ultimo livello, le piattaforme cadenti finiscono sulle punte, garantendo comunque che un giocatore sopra di esse non subisca danni. Questo comportamento è voluto; l'obiettivo delle piattaforme cadenti in quella zona è rendere più difficoltosi i salti.
+- Quando un giocatore si trova sopra un nemico (come uno slime o un pipistrello), non può saltare ma solo scivolare. Questo comportamento è intenzionale per ragioni di game design e logica, poiché saltare mentre si è sopra uno slime non è realistico.
 
 ## Tabella di Punteggi
 
