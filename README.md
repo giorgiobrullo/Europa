@@ -23,11 +23,11 @@ Il giocatore controlla un pinguino eroico dotato di abilità speciali come il do
 ### Main menu
 | Elemento                  | Punteggio | Note                                                     |
 |---------------------------|-----------|----------------------------------------------------------|
-| Load Game                 | ✅ 2      | Checkpoint e dal menù principale                         |
-| Options -> Sound/Music    | ✅ 1      |                                                          |
+| Load Game                 | ✅ 2      | Checkpoint e dal menù principale, [script](https://github.com/giorgiobrullo/Europa/blob/e6ce6e33c695526f2631b0dec8b734ef491d1aeb/Assets/Scripts/Menu/Menu.cs#L39-L45)                         |
+| Options -> Sound/Music    | ✅ 1      | [VolumeController](https://github.com/giorgiobrullo/Europa/blob/main/Assets/Scripts/Volume/VolumeController.cs)                                                        |
 | Options -> Controls       | ✅ 2      | Possibile cambiare tra WASD e <- ->Frecciette nel menù opzioni |
-| Options -> Resolution/Quality | ✅ 0.5 |                                                          |
-| Credits Screen            | ✅ 0.5    |                                                          |
+| Options -> Resolution/Quality | ✅ 0.5 | [ResolutionChanger](https://github.com/giorgiobrullo/Europa/blob/main/Assets/Scripts/Menu/ResolutionChanger.cs)                                                         |
+| Credits Screen            | ✅ 0.5    |   [Credit Scroller](https://github.com/giorgiobrullo/Europa/blob/main/Assets/Scripts/Other/CreditScroller.cs)                                                       |
 | Classifica (non ordinata/ordinata) | ❌ NO     |                                                          |
 
 ### Tutorial
@@ -38,13 +38,13 @@ Il giocatore controlla un pinguino eroico dotato di abilità speciali come il do
 ### GamePlay
 | Elemento                            | Punteggio | Note                              |
 |-------------------------------------|-----------|-----------------------------------|
-| Score                               | ✅ 1      | Mostrato alla fine nei crediti    |
-| Powerup (3*1.0)                     | ✅ 3      | Powerup vita, attacco e difesa    |
+| Score                               | ✅ 1      | Mostrato alla fine nei crediti, [ScoreManager](https://github.com/giorgiobrullo/Europa/blob/main/Assets/Scripts/Other/ScoreManager.cs)    |
+| Powerup (3*1.0)                     | ✅ 3      | Powerup [vita](https://github.com/giorgiobrullo/Europa/blob/main/Assets/Scripts/Items/Heart.cs), [attacco](https://github.com/giorgiobrullo/Europa/blob/main/Assets/Scripts/Items/Sword.cs) e [difesa](https://github.com/giorgiobrullo/Europa/blob/main/Assets/Scripts/Items/Shield.cs)    |
 | Gioco a tempo                      | ❌ NO     |                                   |
 | Presenza di nemici/sfida            | ✅ 1      |                                   |
-| Presenza di nemici/sfida->Livelli di difficoltà | ✅ 1      | Cute, Normal, Hardcore            |
+| Presenza di nemici/sfida->Livelli di difficoltà | ✅ 1      | Cute, Normal, Hardcore ([script](https://github.com/giorgiobrullo/Europa/blob/e6ce6e33c695526f2631b0dec8b734ef491d1aeb/Assets/Scripts/Menu/Menu.cs#L58-L66))           |
 | Presenza di nemici/sfida->Difficoltà crescente | ❌ NO     |                                   |
-| Presenza di nemici/sfida->AI Base| ✅ 1     |   Bat, Slime (GenericEnemy)       |
+| Presenza di nemici/sfida->AI Base| ✅ 1     |   Bat, Slime ([GenericEnemy](https://github.com/giorgiobrullo/Europa/blob/main/Assets/Scripts/Enemies/Generic/GenericEnemy.cs), [EnemyMovement](https://github.com/giorgiobrullo/Europa/blob/main/Assets/Scripts/Enemies/Generic/EnemyMovement.cs))      |
 | Presenza di nemici/sfida->AI Complicata| ❌ NO    |                                   |
 | Presenza di nemici/sfida->Multiplayer Locale| ❌ NO    |                                   |
 
@@ -67,12 +67,12 @@ Il giocatore controlla un pinguino eroico dotato di abilità speciali come il do
 ### EXTRA
 | Elemento                            | Punteggio | Note                              |
 |-------------------------------------|-----------|-----------------------------------|
-| Animazioni originali (2*0.5)| ✅ 1    |  Bat, Slime, Traps                                 |
-| Sound->Soundtrack| ✅ 0.5    |  Soundtrack ogni livello e menù                                 |
+| Animazioni originali (2*0.5)| ✅ 1    |  Bat, Slime, Traps - [Cartella Animations](https://github.com/giorgiobrullo/Europa/tree/main/Assets/Animations)                              |
+| Sound->Soundtrack| ✅ 0.5    |  Soundtrack ogni livello e menù - [Cartella suoni](https://github.com/giorgiobrullo/Europa/tree/main/Assets/Sounds)                                 |
 | Sound->Altri suoni (3*0.5)| ✅ 1.5    |   [Cartella suoni](https://github.com/giorgiobrullo/Europa/tree/main/Assets/Sounds)                                |
 | Raycast| ✅ 1    |   e.g. [1](https://github.com/giorgiobrullo/Europa/blob/e9d3f18855ff750e567a1dec6bd14d06ece1c7c5/Assets/Scripts/Traps/Rockhead.cs#L117) [2](https://github.com/giorgiobrullo/Europa/blob/e9d3f18855ff750e567a1dec6bd14d06ece1c7c5/Assets/Scripts/Enemies/Generic/EnemyMovement.cs#L45)                                |
 | User interface (6*0.5)| ✅ 3    |  Barra Vita, Testo Shield, Testo Attack, Testo difficoltà, GameOver, MenuInGame, Testo tutorial, Dialoghi NPC                                 |
-| Particelle (3*0.5)                             | ✅ 1.5      |  Rockhead (quanto hitta il muro), Big Coin, Player   |
+| Particelle (3*0.5)                             | ✅ 1.5      |  Rockhead (quanto hitta il muro), Big Coin, Player. Presenti nei prefab.   |
 
 Totale: 32.0
 ## Integrazione con LiveSplit
