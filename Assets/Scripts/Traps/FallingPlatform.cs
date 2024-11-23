@@ -48,7 +48,7 @@ namespace Traps
             if (_isFalling)
             {
                 _currentFallSpeed += acceleration * Time.fixedDeltaTime;
-                _rb.velocity = new Vector2(_rb.velocity.x, -_currentFallSpeed);
+                _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, -_currentFallSpeed);
             }
         }
 
@@ -57,7 +57,7 @@ namespace Traps
             if (_isFalling && collision.gameObject.CompareTag("Ground"))
             {
                 _rb.isKinematic = true; // Stop the platform
-                _rb.velocity = Vector2.zero;
+                _rb.linearVelocity = Vector2.zero;
                 _isFalling = false;
             }
         }

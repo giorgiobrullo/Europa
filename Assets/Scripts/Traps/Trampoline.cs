@@ -35,7 +35,7 @@ namespace Traps
                 Rigidbody2D playerRb = collision.collider.GetComponent<Rigidbody2D>();
                 if (playerRb != null)
                 {
-                    playerRb.velocity = new Vector2(playerRb.velocity.x, bounceForce);
+                    playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, bounceForce);
                     TriggerJumpAnimation();
                     Instantiate(soundEffect, transform.position, Quaternion.identity, transform);
                 }

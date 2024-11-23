@@ -18,15 +18,15 @@ namespace ES3Types
 			
 			writer.WriteProperty("position", instance.position, ES3Type_Vector2.Instance);
 			writer.WriteProperty("rotation", instance.rotation, ES3Type_float.Instance);
-			writer.WriteProperty("velocity", instance.velocity, ES3Type_Vector2.Instance);
+			writer.WriteProperty("velocity", instance.linearVelocity, ES3Type_Vector2.Instance);
 			writer.WriteProperty("angularVelocity", instance.angularVelocity, ES3Type_float.Instance);
 			writer.WriteProperty("useAutoMass", instance.useAutoMass, ES3Type_bool.Instance);
 			writer.WriteProperty("mass", instance.mass, ES3Type_float.Instance);
 			writer.WritePropertyByRef("sharedMaterial", instance.sharedMaterial);
 			writer.WriteProperty("centerOfMass", instance.centerOfMass, ES3Type_Vector2.Instance);
 			writer.WriteProperty("inertia", instance.inertia, ES3Type_float.Instance);
-			writer.WriteProperty("drag", instance.drag, ES3Type_float.Instance);
-			writer.WriteProperty("angularDrag", instance.angularDrag, ES3Type_float.Instance);
+			writer.WriteProperty("drag", instance.linearDamping, ES3Type_float.Instance);
+			writer.WriteProperty("angularDrag", instance.angularDamping, ES3Type_float.Instance);
 			writer.WriteProperty("gravityScale", instance.gravityScale, ES3Type_float.Instance);
 			writer.WriteProperty("bodyType", instance.bodyType, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(UnityEngine.RigidbodyType2D)));
 			writer.WriteProperty("useFullKinematicContacts", instance.useFullKinematicContacts, ES3Type_bool.Instance);
@@ -58,7 +58,7 @@ namespace ES3Types
 						instance.rotation = reader.Read<System.Single>(ES3Type_float.Instance);
 						break;
 					case "velocity":
-						instance.velocity = reader.Read<UnityEngine.Vector2>(ES3Type_Vector2.Instance);
+						instance.linearVelocity = reader.Read<UnityEngine.Vector2>(ES3Type_Vector2.Instance);
 						break;
 					case "angularVelocity":
 						instance.angularVelocity = reader.Read<System.Single>(ES3Type_float.Instance);
@@ -79,10 +79,10 @@ namespace ES3Types
 						instance.inertia = reader.Read<System.Single>(ES3Type_float.Instance);
 						break;
 					case "drag":
-						instance.drag = reader.Read<System.Single>(ES3Type_float.Instance);
+						instance.linearDamping = reader.Read<System.Single>(ES3Type_float.Instance);
 						break;
 					case "angularDrag":
-						instance.angularDrag = reader.Read<System.Single>(ES3Type_float.Instance);
+						instance.angularDamping = reader.Read<System.Single>(ES3Type_float.Instance);
 						break;
 					case "gravityScale":
 						instance.gravityScale = reader.Read<System.Single>(ES3Type_float.Instance);

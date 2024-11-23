@@ -110,6 +110,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -131,6 +132,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: -0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -151,6 +153,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: -0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -171,6 +174,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: -0.72727275}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -191,6 +195,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: -0.875}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 26
@@ -211,6 +216,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: -1.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 26
@@ -226,26 +232,6 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 17, y: 13}
-  - name: deadLeft0_Frame_5
-    originalName: 
-    pivot: {x: 0, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 48
-      y: 20
-      width: 0
-      height: 0
-    spriteID: cf58682cf9851484e80b1a3aac53b578
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 16, y: -12}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -255,7 +241,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: deadLeft0_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -264,7 +250,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 52c4fff86ba3ada44b0566846eb94262
-    - name: deadLeft0_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -273,7 +259,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 94320d266b56486428cea063ca9ff240
-    - name: deadLeft0_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -282,7 +268,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: ed728807fd0d6044a952c18bb00e71b0
-    - name: deadLeft0_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -291,7 +277,7 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: 19cb85efeada22c4e8a64b88780d1dbb
-    - name: deadLeft0_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -300,15 +286,6 @@ ScriptedImporter:
         width: 32
         height: 32
       spriteId: f4a3b382598f2d54dbc1d2d05da9ff60
-    - name: deadLeft0_Frame_5
-      frameIndex: 5
-      additiveSortOrder: 0
-      cellRect:
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      spriteId: cf58682cf9851484e80b1a3aac53b578
     linkedCells: []
     parentIndex: -1
   platformSettings:

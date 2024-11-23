@@ -149,7 +149,7 @@ namespace Player
             else
             {
                 _animator.SetBool(Moving, false);
-                _rb.velocity = new Vector2(_externalForce.x, _rb.velocity.y);
+                _rb.linearVelocity = new Vector2(_externalForce.x, _rb.linearVelocity.y);
             }
         }
 
@@ -157,14 +157,14 @@ namespace Player
         {
             CreateDust();
             Instantiate(jumpSound, transform.position, Quaternion.identity, transform);
-            _rb.velocity = new Vector2(_rb.velocity.x, 0); 
+            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0); 
             _rb.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
         }
 
         private void Move(float speed)
         {
             // Add external forces to the player movement
-            _rb.velocity = new Vector2(speed + _externalForce.x, _rb.velocity.y);
+            _rb.linearVelocity = new Vector2(speed + _externalForce.x, _rb.linearVelocity.y);
             _animator.SetBool(Moving, true);
     
             // Determine if character is facing left or right based on speed.
@@ -206,7 +206,7 @@ namespace Player
         public void SetDead(bool dead)
         {
             _isDead = dead;
-            _rb.velocity = new Vector2(0, _rb.velocity.y);
+            _rb.linearVelocity = new Vector2(0, _rb.linearVelocity.y);
             _animator.SetBool(Moving, false);
         }
         

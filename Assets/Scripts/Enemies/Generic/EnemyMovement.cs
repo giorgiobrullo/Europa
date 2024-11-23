@@ -142,7 +142,7 @@ namespace Enemies.Generic
                 return;
 
             // Determine the initial direction of the slipping force based on the player's current velocity
-            float initialSlipDirection = Mathf.Sign(playerRb.velocity.x);
+            float initialSlipDirection = Mathf.Sign(playerRb.linearVelocity.x);
 
             // If the player is not moving horizontally, choose a default direction
             if (initialSlipDirection == 0)
